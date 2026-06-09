@@ -1,6 +1,6 @@
 {
   "name": "buildbeat",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Your codebase gets a live, adaptive soundtrack: tension when tests fail, a resolve on git commit.",
   "type": "module",
   "license": "MIT",

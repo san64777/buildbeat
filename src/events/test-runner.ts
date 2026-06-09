@@ -28,7 +28,9 @@ export function makeTestRunner(
     }
     running = true;
     onEvent({ kind: "test:start" });
-    const proc = spawn("sh", ["-c", command]);
+    // shell:true uses each platform's own shell (/bin/sh on unix, cmd on
+    // Windows), so the user's test command runs on every OS.
+    const proc = spawn(command, { shell: true });
     let out = "";
     proc.stdout?.on("data", (d: Buffer) => {
       out += d.toString();
