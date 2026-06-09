@@ -70,8 +70,8 @@ buildbeat runs it on save and reads the exit code.
 
 - It is a toy: a continuous, adaptive score for your dev loop, meant to be fun and left running.
 - It is not a productivity tool, and the default sound is procedural Web Audio, not generative AI
-  music. (Real-time on-device AI music exists but is Apple-Silicon-only today, so it is kept as an
-  optional flavor behind a swappable driver, never the floor.)
+  music. (Real-time generative AI scoring is heavy and hardware-dependent, so it is kept as an
+  optional flavor behind a swappable driver, never the default.)
 
 ## Develop
 
