@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>buildbeat</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap"
+    />
+    <style>
+      :root { color-scheme: dark; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { height: 100%; background: #07090c; overflow: hidden; }
+      #screen { display: block; width: 100vw; height: 100vh; }
+      #knob { position: absolute; left: -9999px; top: -9999px; }
+      .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      #overlay {
+        position: fixed; inset: 0; z-index: 10; cursor: pointer;
+        display: grid; place-items: center; background: #07090c;
+        font-family: "IBM Plex Mono", ui-monospace, monospace;
+        color: #9dff4f; transition: opacity 0.5s ease;
+      }
+      #overlay .box { text-align: center; letter-spacing: 0.18em; }
+      #overlay .big { font-size: 13px; color: #5a6675; text-transform: uppercase; }
+      #overlay .prompt { margin-top: 14px; font-size: 18px; font-weight: 700; }
+      #overlay .prompt::after { content: "_"; animation: blink 1s steps(1) infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
+      .hidden { opacity: 0; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <canvas id="screen"></canvas>
+    <input id="knob" type="range" min="0" max="100" value="5" aria-hidden="true" />
+    <p id="srmood" class="sr" aria-live="polite">calm</p>
+    <div id="overlay">
+      <div class="box">
+        <div class="big">SYSTEM://BUILDBEAT.MONITOR</div>
+        <div class="prompt">PRESS ANY KEY TO BOOT</div>
+      </div>
+    </div>
+    <script type="module" src="/render.js"></script>
+  </body>
+</html>

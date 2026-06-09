@@ -1,0 +1,25 @@
+.venv
+node_modules
+dist
+.next
+*.log
+.DS_Store
+.env*
+.playwright-mcp
+
+# generated clip artifacts
+buildbeat-clip.*
+buildbeat-*-poster.png
+*.tgz
+
+# secrets
+secrets/
+*.pem
+*.key
+
+# Kept LOCAL only: strategy, internal process, project rules (never committed)
+.claude/
+CLAUDE.md
+PLAN.md
+research/
+docs/
